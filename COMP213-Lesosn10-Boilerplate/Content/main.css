@@ -26,7 +26,6 @@ footer {
 }
 
 nav {
-    padding: 10px;
     background-color: black;
     overflow: auto;
 }
@@ -34,11 +33,12 @@ nav {
 
 nav ul {
     text-align: right;
+    overflow: auto;
 }
 
 nav ul li {
-    padding: 5px;
-    display: inline;
+    padding: 15px;
+    display: inline-block;
 }
 
 nav ul li a {
@@ -46,16 +46,69 @@ nav ul li a {
     text-decoration: none;
 }
 
-nav ul li a:hover {
-    text-decoration: underline;
+nav ul li:hover {
+    background-color: darkgrey;
+
 }
 
-.active {
-    text-decoration: underline;
+
+.active, .active:hover {
+    background-color: gray;
+
 }
+
+.active a:hover {
+    cursor: default;
+    
+}
+
 
 #mainContent {
     margin: 0 auto;
     padding: 15px;
     max-width: 90%;
+}
+
+@media only screen and (max-width:480px) {
+    .menuContent {
+        display: none;
+    }
+
+    .menuButton {
+        margin: 5px;
+        display: block;
+        float: right;
+        width: 34px;
+        height: 28px;
+        padding: 1px;
+        border: 1px solid white;
+        border-radius: 5px
+    }
+
+    .icon-bar {
+        display: block;
+        background-color: white;
+        width: 22px;
+        height: 2px;
+        margin: 4px auto;
+        border: 1px solid white;
+        border-radius: 2px;
+    }
+
+    .menuButton:focus, .menubutton:hover {
+        background-color: darkgray;
+    }
+
+    .menuButton:focus ~ .menuContent {
+        display: block;
+    }
+
+    nav ul {
+        width: 100%;
+        margin-top: 35px;
+    }
+    nav ul li {
+        border: 1px solid white;
+        display: block;
+    }
 }
